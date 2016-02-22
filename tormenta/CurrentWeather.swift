@@ -45,7 +45,8 @@ enum Icon: String {
         imageName = "cloudy-day.png"
       case .PartlyCloudyNight:
         imageName = "cloudy-night.png"
-
+    }
+    
     return UIImage(named: imageName)
   }
 }
@@ -81,3 +82,4 @@ struct CurrentWeather {
     }
   }
 }
+
