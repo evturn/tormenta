@@ -29,8 +29,12 @@ class NetworkOperation {
         
         switch(httpResponse.statusCode) {
           case 200:
-            let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: nil) as? [String: AnyObject]
-            completion(jsonDictionary)
+            do {
+              let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! [String: AnyObject]
+              completion(jsonDictionary)
+            } catch {
+              print(error)
+          }
           default:
             print("GET request not successful. HTTP status code \(httpResponse.statusCode)")
         }
