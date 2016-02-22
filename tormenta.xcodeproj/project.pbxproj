@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3318B62F1C7B785F0067095E /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318B62E1C7B785F0067095E /* NetworkOperation.swift */; };
+		3318B6311C7B9CC60067095E /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318B6301C7B9CC60067095E /* ForecastService.swift */; };
 		A6315C531C7A484900964E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6315C521C7A484900964E53 /* AppDelegate.swift */; };
 		A6315C551C7A484900964E53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6315C541C7A484900964E53 /* ViewController.swift */; };
 		A6315C581C7A484900964E53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6315C561C7A484900964E53 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3318B62E1C7B785F0067095E /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		3318B6301C7B9CC60067095E /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		A6315C4F1C7A484900964E53 /* tormenta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tormenta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6315C521C7A484900964E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6315C541C7A484900964E53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				A6315C5E1C7A484900964E53 /* Info.plist */,
 				A6315C681C7A4B8300964E53 /* CurrentWeather.swift */,
 				3318B62E1C7B785F0067095E /* NetworkOperation.swift */,
+				3318B6301C7B9CC60067095E /* ForecastService.swift */,
 			);
 			path = tormenta;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				3318B62F1C7B785F0067095E /* NetworkOperation.swift in Sources */,
 				A6315C551C7A484900964E53 /* ViewController.swift in Sources */,
 				A6315C691C7A4B8300964E53 /* CurrentWeather.swift in Sources */,
+				3318B6311C7B9CC60067095E /* ForecastService.swift in Sources */,
 				A6315C531C7A484900964E53 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
