@@ -20,13 +20,16 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
     let forecastService = ForecastService(APIKey: forecastAPIKey)
     
-    forecastService.getForecast(coordinate.lat, coordinate.long) {
+    forecastService.getForecast(coordinate.lat, long: coordinate.long) {
       (let currently) in
       if let currentWeather = currently {
-        
+        dispatch_async(dispatch_get_main_queue()) {
+          if let temperature = currentWeather.temperature {
+            self.currentTemperatureLabel?.text = "\(temperature)º"
+          }
+        }
       }
     }
   }
