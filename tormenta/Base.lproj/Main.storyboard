@@ -47,14 +47,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="3mj-9m-62x">
+                                <rect key="frame" x="190" y="108" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="2lj-11-Jrc"/>
+                                    <constraint firstAttribute="height" constant="60" id="3nr-lD-vBw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="RkZ-XQ-zFj" firstAttribute="top" secondItem="tKS-dZ-lJF" secondAttribute="bottom" constant="8" id="3qC-VO-nkj"/>
                             <constraint firstItem="TMl-f1-g28" firstAttribute="centerX" secondItem="RkZ-XQ-zFj" secondAttribute="centerX" id="76p-xu-vA9"/>
+                            <constraint firstItem="tKS-dZ-lJF" firstAttribute="top" secondItem="3mj-9m-62x" secondAttribute="bottom" constant="35" id="7j3-bv-Ppm"/>
                             <constraint firstItem="RkZ-XQ-zFj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="65" id="DBF-E8-RVc"/>
                             <constraint firstItem="TMl-f1-g28" firstAttribute="top" secondItem="RkZ-XQ-zFj" secondAttribute="bottom" constant="9" id="PY2-PL-Tev"/>
                             <constraint firstItem="tKS-dZ-lJF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-2.5" id="U2Y-d3-sv1"/>
+                            <constraint firstItem="3mj-9m-62x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-80" id="b1P-kD-z6g"/>
                             <constraint firstItem="RkZ-XQ-zFj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-65.5" id="bib-SA-LBa"/>
                             <constraint firstItem="06Y-2j-H40" firstAttribute="top" secondItem="V2j-Mr-vzS" secondAttribute="bottom" constant="8" id="bsU-sD-ep3"/>
                             <constraint firstItem="V2j-Mr-vzS" firstAttribute="top" secondItem="tKS-dZ-lJF" secondAttribute="bottom" constant="8" id="dc2-84-Swp"/>
@@ -72,6 +81,7 @@
                         <outlet property="currentHumidityLabel" destination="TMl-f1-g28" id="XGk-zD-omJ"/>
                         <outlet property="currentPrecipitationLabel" destination="06Y-2j-H40" id="Jje-Sa-pLA"/>
                         <outlet property="currentTemperatureLabel" destination="tKS-dZ-lJF" id="ETK-7I-WuE"/>
+                        <outlet property="currentWeatherIcon" destination="3mj-9m-62x" id="Odo-al-Gfc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -79,4 +89,7 @@
             <point key="canvasLocation" x="333" y="295"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="default" width="30" height="30"/>
+    </resources>
 </document>
