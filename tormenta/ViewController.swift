@@ -29,6 +29,14 @@ class ViewController: UIViewController {
           if let temperature = currentWeather.temperature {
             self.currentTemperatureLabel?.text = "\(temperature)º"
           }
+          
+          if let humidity = currentWeather.humidity {
+            self.currentHumidityLabel?.text = "\(humidity)%"
+          }
+          
+          if let precipitation = currentWeather.precipProbability {
+            self.currentPrecipitationLabel?.text = "\(precipitation)%"
+          }
         }
       }
     }
