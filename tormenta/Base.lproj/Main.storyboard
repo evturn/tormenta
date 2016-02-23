@@ -54,10 +54,10 @@
                                     <constraint firstAttribute="height" constant="60" id="3nr-lD-vBw"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manhattan, NY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eq7-4v-orp">
-                                <rect key="frame" x="258" y="126" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Manhattan, NY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eq7-4v-orp">
+                                <rect key="frame" x="258" y="126" width="130" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -69,6 +69,8 @@
                             <constraint firstItem="RkZ-XQ-zFj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="65" id="DBF-E8-RVc"/>
                             <constraint firstItem="TMl-f1-g28" firstAttribute="top" secondItem="RkZ-XQ-zFj" secondAttribute="bottom" constant="9" id="PY2-PL-Tev"/>
                             <constraint firstItem="tKS-dZ-lJF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-2.5" id="U2Y-d3-sv1"/>
+                            <constraint firstItem="Eq7-4v-orp" firstAttribute="bottom" secondItem="tKS-dZ-lJF" secondAttribute="bottom" id="WAs-oa-cYo"/>
+                            <constraint firstItem="Eq7-4v-orp" firstAttribute="leading" secondItem="3mj-9m-62x" secondAttribute="trailing" constant="8" id="ZhH-js-juf"/>
                             <constraint firstItem="3mj-9m-62x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-80" id="b1P-kD-z6g"/>
                             <constraint firstItem="RkZ-XQ-zFj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-65.5" id="bib-SA-LBa"/>
                             <constraint firstItem="06Y-2j-H40" firstAttribute="top" secondItem="V2j-Mr-vzS" secondAttribute="bottom" constant="8" id="bsU-sD-ep3"/>
@@ -92,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="333" y="295"/>
+            <point key="canvasLocation" x="148" y="285"/>
         </scene>
     </scenes>
     <resources>
