@@ -15,6 +15,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var currentPrecipitationLabel: UILabel?
   @IBOutlet weak var currentWeatherIcon: UIImageView?
   @IBOutlet weak var currentWeatherSummary: UILabel?
+  @IBOutlet weak var refreshButton: UIButton?
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
   
   private let forecastAPIKey = "1f46e094ffe74026e1406789fbe04788"
 
@@ -56,13 +58,26 @@ class ViewController: UIViewController {
           if let summary = currentWeather.summary {
             self.currentWeatherSummary?.text = summary
           }
+          
+          self.toggleRefreshAnimation(false)
         }
       }
     }
   }
   
   @IBAction func refreshWeather() {
+    toggleRefreshAnimation(true)
     retrieveWeatherForecast()
+  }
+  
+  func toggleRefreshAnimation(on: Bool) {
+    refreshButton?.hidden = on
+    
+    if on {
+      activityIndicator?.startAnimating()
+    } else {
+      activityIndicator?.stopAnimating()
+    }
   }
   
 }
