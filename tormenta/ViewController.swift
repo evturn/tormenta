@@ -29,15 +29,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
-    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-    locationManager.startUpdatingLocation()
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    locationManager.requestLocation()
   }
 
   // MARK: CLLocationManagerDelegate
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     let location = locations.last
 
-    locationManager.stopUpdatingLocation()
+    print(location)
     latitude = location!.coordinate.latitude
     longitude = location!.coordinate.longitude
     retrieveWeatherForecast()
