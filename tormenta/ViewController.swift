@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
   
   @IBOutlet weak var currentTemperatureLabel: UILabel?
   @IBOutlet weak var currentHumidityLabel: UILabel?
@@ -17,25 +18,36 @@ class ViewController: UIViewController {
   @IBOutlet weak var currentWeatherSummary: UILabel?
   @IBOutlet weak var refreshButton: UIButton?
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
-  
-  private let forecastAPIKey = "1f46e094ffe74026e1406789fbe04788"
 
-  let coordinate: (lat: Double, long: Double) = (40.758896,-73.985130)
+  private let locationManager = CLLocationManager()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    retrieveWeatherForecast()
+
+    locationManager.delegate = self
+    locationManager.requestLocation()
   }
 
+  // MARK: CLLocationManagerDelegate
+  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    if let location = locations.last {
+      retrieveWeatherForecast(location.coordinate.latitude, long: location.coordinate.longitude)
+    }
+  }
+  
+  func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    print(error)
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-  func retrieveWeatherForecast() {
-    let forecastService = ForecastService(APIKey: forecastAPIKey)
+  
+  func retrieveWeatherForecast(lat: Double, long: Double) {
+    let forecastService = ForecastService(APIKey: "1f46e094ffe74026e1406789fbe04788")
     
-    forecastService.getForecast(coordinate.lat, long: coordinate.long) {
+    forecastService.getForecast(lat, long: long) {
       (let currently) in
       if let currentWeather = currently {
         dispatch_async(dispatch_get_main_queue()) {
@@ -67,7 +79,7 @@ class ViewController: UIViewController {
   
   @IBAction func refreshWeather() {
     toggleRefreshAnimation(true)
-    retrieveWeatherForecast()
+    locationManager.requestLocation()
   }
   
   func toggleRefreshAnimation(on: Bool) {
@@ -79,6 +91,5 @@ class ViewController: UIViewController {
       activityIndicator?.stopAnimating()
     }
   }
-  
 }
 
