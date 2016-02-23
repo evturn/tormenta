@@ -2,12 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>allowsBackgroundLocationUpdates</key>
-	<string>YES</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
-	<key>NSLocationAlwaysUsageDescription</key>
+	<key>NSLocationAlwaysUsageDescription
+NSLocationAlwaysUsageDescription
+</key>
 	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<array/>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -36,6 +38,7 @@
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
+		<string>location-services</string>
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarStyle</key>

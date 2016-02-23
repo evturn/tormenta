@@ -18,21 +18,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
   @IBOutlet weak var currentWeatherSummary: UILabel?
   @IBOutlet weak var refreshButton: UIButton?
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
+  var latitude: Double?
+  var longitude: Double?
 
   private let locationManager = CLLocationManager()
+  private let forecastAPIKey = "1f46e094ffe74026e1406789fbe04788"
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
     locationManager.delegate = self
-    locationManager.requestLocation()
+    locationManager.requestWhenInUseAuthorization()
+    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+    locationManager.startUpdatingLocation()
   }
 
   // MARK: CLLocationManagerDelegate
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    if let location = locations.last {
-      retrieveWeatherForecast(location.coordinate.latitude, long: location.coordinate.longitude)
-    }
+    let location: CLLocationCoordinate2D = manager.location!.coordinate
+    
+    latitude = location.latitude
+    longitude = location.longitude
+    print(location)
+    retrieveWeatherForecast()
   }
   
   func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -44,10 +52,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // Dispose of any resources that can be recreated.
   }
   
-  func retrieveWeatherForecast(lat: Double, long: Double) {
-    let forecastService = ForecastService(APIKey: "1f46e094ffe74026e1406789fbe04788")
+  func retrieveWeatherForecast() {
+    let forecastService = ForecastService(APIKey: forecastAPIKey)
     
-    forecastService.getForecast(lat, long: long) {
+    forecastService.getForecast(latitude!, long: longitude!) {
       (let currently) in
       if let currentWeather = currently {
         dispatch_async(dispatch_get_main_queue()) {
@@ -72,6 +80,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
           }
           
           self.toggleRefreshAnimation(false)
+          self.locationManager.stopUpdatingLocation()
         }
       }
     }
