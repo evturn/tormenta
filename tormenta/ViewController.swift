@@ -61,5 +61,9 @@ class ViewController: UIViewController {
     }
   }
   
+  @IBAction func refreshWeather() {
+    retrieveWeatherForecast()
+  }
+  
 }
 
