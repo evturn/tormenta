@@ -35,11 +35,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
   // MARK: CLLocationManagerDelegate
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    let location: CLLocationCoordinate2D = manager.location!.coordinate
-    
-    latitude = location.latitude
-    longitude = location.longitude
-    print(location)
+    let location = locations.last
+
+    locationManager.stopUpdatingLocation()
+    latitude = location!.coordinate.latitude
+    longitude = location!.coordinate.longitude
     retrieveWeatherForecast()
   }
   
@@ -80,7 +80,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
           }
           
           self.toggleRefreshAnimation(false)
-          self.locationManager.stopUpdatingLocation()
         }
       }
     }
