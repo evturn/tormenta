@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330A0CAE1C7FA0A500EE6451 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A0CAD1C7FA0A500EE6451 /* WeeklyTableViewController.swift */; };
 		3318B62F1C7B785F0067095E /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318B62E1C7B785F0067095E /* NetworkOperation.swift */; };
 		3318B6311C7B9CC60067095E /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318B6301C7B9CC60067095E /* ForecastService.swift */; };
 		A6315C531C7A484900964E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6315C521C7A484900964E53 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330A0CAD1C7FA0A500EE6451 /* WeeklyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewController.swift; sourceTree = "<group>"; };
 		3318B62E1C7B785F0067095E /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		3318B6301C7B9CC60067095E /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		A6315C4F1C7A484900964E53 /* tormenta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tormenta.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +45,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330A0CA91C7FA02800EE6451 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A6315C541C7A484900964E53 /* ViewController.swift */,
+				330A0CAD1C7FA0A500EE6451 /* WeeklyTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		330A0CAA1C7FA03200EE6451 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6315C561C7A484900964E53 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		330A0CAB1C7FA03900EE6451 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6315C681C7A4B8300964E53 /* CurrentWeather.swift */,
+				3318B62E1C7B785F0067095E /* NetworkOperation.swift */,
+				3318B6301C7B9CC60067095E /* ForecastService.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		330A0CAC1C7FA04C00EE6451 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6315C521C7A484900964E53 /* AppDelegate.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A6315C461C7A484900964E53 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +99,14 @@
 		A6315C511C7A484900964E53 /* tormenta */ = {
 			isa = PBXGroup;
 			children = (
+				330A0CAB1C7FA03900EE6451 /* Models */,
+				330A0CAA1C7FA03200EE6451 /* Views */,
+				330A0CA91C7FA02800EE6451 /* Controller */,
 				A6315C661C7A4AED00964E53 /* CurrentWeather.plist */,
-				A6315C521C7A484900964E53 /* AppDelegate.swift */,
-				A6315C541C7A484900964E53 /* ViewController.swift */,
-				A6315C561C7A484900964E53 /* Main.storyboard */,
 				A6315C591C7A484900964E53 /* Assets.xcassets */,
 				A6315C5B1C7A484900964E53 /* LaunchScreen.storyboard */,
 				A6315C5E1C7A484900964E53 /* Info.plist */,
-				A6315C681C7A4B8300964E53 /* CurrentWeather.swift */,
-				3318B62E1C7B785F0067095E /* NetworkOperation.swift */,
-				3318B6301C7B9CC60067095E /* ForecastService.swift */,
+				330A0CAC1C7FA04C00EE6451 /* Supporting Files */,
 			);
 			path = tormenta;
 			sourceTree = "<group>";
@@ -151,6 +186,7 @@
 			files = (
 				3318B62F1C7B785F0067095E /* NetworkOperation.swift in Sources */,
 				A6315C551C7A484900964E53 /* ViewController.swift in Sources */,
+				330A0CAE1C7FA0A500EE6451 /* WeeklyTableViewController.swift in Sources */,
 				A6315C691C7A4B8300964E53 /* CurrentWeather.swift in Sources */,
 				3318B6311C7B9CC60067095E /* ForecastService.swift in Sources */,
 				A6315C531C7A484900964E53 /* AppDelegate.swift in Sources */,
