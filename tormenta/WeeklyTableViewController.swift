@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WeeklyTableViewController: UITableViewController {
+class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegate {
+  
+  @IBOutlet weak var currentWeatherIcon: UIImageView?
+  @IBOutlet weak var currentTemperatureLabel: UILabel?
+  @IBOutlet weak var currentPrecipitationLabel: UILabel?
+  @IBOutlet weak var currentTemperatureRangeLabel: UILabel?
+  
+  var latitude: Double?
+  var longitude: Double?
+  
+  private let locationManager = CLLocationManager()
+  private let forecastAPIKey = "1f46e094ffe74026e1406789fbe04788"
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    locationManager.delegate = self
+    locationManager.requestWhenInUseAuthorization()
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    locationManager.requestLocation()
     
     tableView.backgroundView = BackgroundView()
   }
@@ -31,4 +48,50 @@ class WeeklyTableViewController: UITableViewController {
     // #warning Incomplete implementation, return the number of rows
     return 0
   }
+  
+  // MARK: - Weather Fetching
+  
+  func retrieveWeatherForecast() {
+    let forecastService = ForecastService(APIKey: forecastAPIKey)
+    
+    forecastService.getForecast(latitude!, long: longitude!) {
+      (let currently) in
+      if let currentWeather = currently {
+        dispatch_async(dispatch_get_main_queue()) {
+          if let temperature = currentWeather.temperature {
+            self.currentTemperatureLabel?.text = "\(temperature)º"
+          }
+          
+          if let precipitation = currentWeather.precipProbability {
+            self.currentPrecipitationLabel?.text = "\(precipitation)%"
+          }
+          
+          if let icon = currentWeather.icon {
+            self.currentWeatherIcon?.image = icon
+          }
+          
+//          if let summary = currentWeather.summary {
+//            self.currentWeatherSummary?.text = summary
+//          }
+        }
+      }
+    }
+  }
+  
+  
+  // MARK: CLLocationManagerDelegate
+  
+  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    let location = locations.last
+    
+    print(location)
+    latitude = location!.coordinate.latitude
+    longitude = location!.coordinate.longitude
+    retrieveWeatherForecast()
+  }
+  
+  func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    print(error)
+  }
+
 }
