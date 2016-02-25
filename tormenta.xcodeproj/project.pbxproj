@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		330A0CAE1C7FA0A500EE6451 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A0CAD1C7FA0A500EE6451 /* WeeklyTableViewController.swift */; };
+		330A0CB01C7FA26C00EE6451 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A0CAF1C7FA26C00EE6451 /* BackgroundView.swift */; };
 		3318B62F1C7B785F0067095E /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318B62E1C7B785F0067095E /* NetworkOperation.swift */; };
 		3318B6311C7B9CC60067095E /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318B6301C7B9CC60067095E /* ForecastService.swift */; };
 		A6315C531C7A484900964E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6315C521C7A484900964E53 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		330A0CAD1C7FA0A500EE6451 /* WeeklyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewController.swift; sourceTree = "<group>"; };
+		330A0CAF1C7FA26C00EE6451 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		3318B62E1C7B785F0067095E /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		3318B6301C7B9CC60067095E /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		A6315C4F1C7A484900964E53 /* tormenta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tormenta.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				A6315C561C7A484900964E53 /* Main.storyboard */,
+				330A0CAF1C7FA26C00EE6451 /* BackgroundView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330A0CB01C7FA26C00EE6451 /* BackgroundView.swift in Sources */,
 				3318B62F1C7B785F0067095E /* NetworkOperation.swift in Sources */,
 				A6315C551C7A484900964E53 /* ViewController.swift in Sources */,
 				330A0CAE1C7FA0A500EE6451 /* WeeklyTableViewController.swift in Sources */,
