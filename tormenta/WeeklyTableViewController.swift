@@ -59,6 +59,18 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
     
   }
   
+  // MARK: - Navigation
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "showDaily" {
+      if let indexPath = tableView.indexPathForSelectedRow {
+        let dailyWeather = weeklyWeather[indexPath.row]
+        
+        (segue.destinationViewController as! ViewController).dailyWeather = dailyWeather
+      }
+    }
+  }
+  
   // MARK: - Table view data source
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

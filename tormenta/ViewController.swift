@@ -11,9 +11,21 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  var dailyWeather: DailyWeather? {
+    didSet {
+      configureView()
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
+  }
+  
+  func configureView() {
+    if let weather = dailyWeather {
+      self.title = weather.day
+    }
   }
 
   override func didReceiveMemoryWarning() {
