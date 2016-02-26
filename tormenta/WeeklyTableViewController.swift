@@ -53,13 +53,21 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
   // MARK: - Table view data source
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
-    return 0
+    return 1
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return 0
+    return weeklyWeather.count
+  }
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell")!
+    let dailyWeather = weeklyWeather[indexPath.row]
+    
+    cell.textLabel?.text = dailyWeather.day
+
+    return cell
   }
   
   // MARK: - Weather Fetching
@@ -91,6 +99,8 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
             let lowTemp = self.weeklyWeather.first?.minTemperature {
               self.currentTemperatureRangeLabel?.text = "↑\(highTemp)º↓\(lowTemp)º"
           }
+          
+          self.tableView.reloadData()
 //          if let summary = currentWeather.summary {
 //            self.currentWeatherSummary?.text = summary
 //          }
