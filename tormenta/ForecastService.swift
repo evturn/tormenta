@@ -19,14 +19,15 @@ struct ForecastService {
     forecastBaseURL = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)/")
   }
   
-  func getForecast(lat: Double, long: Double, completion: (CurrentWeather? -> Void)) {
+  func getForecast(lat: Double, long: Double, completion: (Forecast? -> Void)) {
     if let forecastURL = NSURL(string: "\(lat),\(long)", relativeToURL: forecastBaseURL) {
       let networkOperation = NetworkOperation(url: forecastURL)
       
       networkOperation.downloadJSONFromURL {
         (let JSONDictionary) in
-        let currentWeather = self.currentWeatherFromJSON(JSONDictionary)
-        completion(currentWeather)
+        let forecast = Forecast(weatherDictionary: JSONDictionary)
+
+        completion(forecast)
       }
     } else {
       print("Couldn't construct a valid URL")
