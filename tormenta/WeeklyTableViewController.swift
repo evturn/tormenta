@@ -63,7 +63,7 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
           }
           
           if let precipitation = currentWeather.precipProbability {
-            self.currentPrecipitationLabel?.text = "\(precipitation)%"
+            self.currentPrecipitationLabel?.text = "Rain: \(precipitation)%"
           }
           
           if let icon = currentWeather.icon {
