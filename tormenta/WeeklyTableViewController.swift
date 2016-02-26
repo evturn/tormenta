@@ -63,10 +63,14 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell")!
+    let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell") as! DailyWeatherTableViewCell
     let dailyWeather = weeklyWeather[indexPath.row]
+    if let maxTemp = dailyWeather.maxTemperature {
+      cell.temperatureLabel.text = "\(maxTemp)º"
+    }
     
-    cell.textLabel?.text = dailyWeather.day
+    cell.weatherIcon.image = dailyWeather.icon
+    cell.dayLabel.text = dailyWeather.day
 
     return cell
   }
