@@ -35,7 +35,10 @@ struct DailyWeather {
       precipChance = nil
     }
     summary = dailyWeatherDict["summary"] as? String
-    
+    if let iconString = dailyWeatherDict["icon"] as? String,
+    let iconEnum = Icon(rawValue: iconString) {
+      (icon, largeIcon) = iconEnum.toImage()
+    }
   }
   
 }
