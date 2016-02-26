@@ -40,6 +40,7 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
   
   func configureView() {
     tableView.backgroundView = BackgroundView()
+    tableView.rowHeight = 64
 
     if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
       let navBarAttributesDictionary: [String: AnyObject]? = [
