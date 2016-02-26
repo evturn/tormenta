@@ -49,6 +49,10 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
       ]
       navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
     }
+    
+    refreshControl?.layer.zPosition = tableView.backgroundView!.layer.zPosition + 1
+    refreshControl?.tintColor = UIColor.whiteColor()
+    
   }
   
   // MARK: - Table view data source
@@ -88,6 +92,14 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
       header.textLabel!.font = UIFont(name: "HelveticaNeue-Thin", size: 14.0)
       header.textLabel!.textColor = UIColor.whiteColor()
     }
+  }
+  
+  override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+    let cell = tableView.cellForRowAtIndexPath(indexPath)
+    cell?.contentView.backgroundColor = UIColor(red: 165/255.0, green: 142/255.0, blue: 203/255.0, alpha: 1.0)
+    let highlightView = UIView()
+    highlightView.backgroundColor = UIColor(red: 165/255.0, green: 142/255.0, blue: 203/255.0, alpha: 1.0)
+    cell?.selectedBackgroundView = highlightView
   }
   
   // MARK: - Weather Fetching
