@@ -25,16 +25,27 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureView()
     locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
     locationManager.requestLocation()
-    
-    tableView.backgroundView = BackgroundView()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  func configureView() {
+    tableView.backgroundView = BackgroundView()
+
+    if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
+      let navBarAttributesDictionary: [String: AnyObject]? = [
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: navBarFont
+      ]
+      navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+    }
   }
   
   // MARK: - Table view data source
