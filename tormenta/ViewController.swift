@@ -26,6 +26,14 @@ class ViewController: UIViewController {
     if let weather = dailyWeather {
       self.title = weather.day
     }
+    
+    if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
+      let navBarAttributesDictionary: [String: AnyObject]? = [
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: navBarFont
+      ]
+      navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+    }
   }
 
   override func didReceiveMemoryWarning() {

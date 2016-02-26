@@ -45,15 +45,6 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
   func configureView() {
     tableView.backgroundView = BackgroundView()
     tableView.rowHeight = 64
-
-    if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
-      let navBarAttributesDictionary: [String: AnyObject]? = [
-        NSForegroundColorAttributeName: UIColor.whiteColor(),
-        NSFontAttributeName: navBarFont
-      ]
-      navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
-    }
-    
     refreshControl?.layer.zPosition = tableView.backgroundView!.layer.zPosition + 1
     refreshControl?.tintColor = UIColor.whiteColor()
     
