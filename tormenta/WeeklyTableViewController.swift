@@ -34,6 +34,10 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
     locationManager.requestLocation()
   }
   
+  @IBAction func refreshWeather() {
+    locationManager.requestLocation()
+    refreshControl?.endRefreshing()
+  }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
