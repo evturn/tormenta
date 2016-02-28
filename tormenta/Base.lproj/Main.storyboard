@@ -343,6 +343,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="highTemperatureLabel" destination="jKI-bS-Dvi" id="SX7-Nq-2KI"/>
+                        <outlet property="humidityLabel" destination="oVd-Xg-8RZ" id="zZ5-ln-GQ6"/>
+                        <outlet property="lowTemperatureLabel" destination="l6x-l5-WhY" id="VmH-gK-1wQ"/>
+                        <outlet property="precipitationLabel" destination="AD7-5J-mYG" id="bXg-pw-kXR"/>
                         <outlet property="summaryLabel" destination="X3Z-pH-pa4" id="Xdn-Nw-vVb"/>
                         <outlet property="sunriseTimeLabel" destination="j9q-E1-yPZ" id="Od0-SG-3vt"/>
                         <outlet property="sunsetTimeLabel" destination="Z6m-IH-aYg" id="mwz-pw-xty"/>
