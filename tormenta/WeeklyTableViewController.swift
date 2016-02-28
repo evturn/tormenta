@@ -45,6 +45,15 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
   func configureView() {
     tableView.backgroundView = BackgroundView()
     tableView.rowHeight = 64
+    
+    if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
+      let navBarAttributesDictionary: [String: AnyObject]? = [
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: navBarFont
+      ]
+      navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+    }
+    
     refreshControl?.layer.zPosition = tableView.backgroundView!.layer.zPosition + 1
     refreshControl?.tintColor = UIColor.whiteColor()
     
@@ -93,8 +102,7 @@ class WeeklyTableViewController: UITableViewController, CLLocationManagerDelegat
   // MARK: - Delegate Methods
   
   override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    view.tintColor = UIColor(red: 170/255.0, green: 131/255.0, blue: 244/255.0, alpha: 1.0)
-    
+    view.tintColor = UIColor(red: 170/255.0, green: 131/255.0, blue: 224/255.0, alpha: 1.0)
     if let header = view as? UITableViewHeaderFooterView {
       header.textLabel!.font = UIFont(name: "HelveticaNeue-Thin", size: 14.0)
       header.textLabel!.textColor = UIColor.whiteColor()
