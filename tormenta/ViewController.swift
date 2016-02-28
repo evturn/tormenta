@@ -29,6 +29,10 @@ class ViewController: UIViewController {
   
   func configureView() {
     if let weather = dailyWeather {
+      weatherIcon?.image = weather.largeIcon
+      summaryLabel?.text = weather.summary
+      sunriseTimeLabel?.text = weather.sunriseTime
+      sunsetTimeLabel?.text = weather.sunsetTime
       self.title = weather.day
     }
     
@@ -40,6 +44,7 @@ class ViewController: UIViewController {
       
       UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributesDictionary, forState: .Normal)
     }
+
   }
 
   override func didReceiveMemoryWarning() {
