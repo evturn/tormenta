@@ -12,8 +12,8 @@ class DetailBackgroundView: UIView {
   
   override func drawRect(rect: CGRect) {
     //// Color Declarations
-    var lightPurple: UIColor = UIColor(red: 0.377, green: 0.075, blue: 0.778, alpha: 1.000)
-    var darkPurple: UIColor = UIColor(red: 0.060, green: 0.036, blue: 0.202, alpha: 1.000)
+    let lightPurple: UIColor = UIColor(red: 0.377, green: 0.075, blue: 0.778, alpha: 1.000)
+    let darkPurple: UIColor = UIColor(red: 0.060, green: 0.036, blue: 0.202, alpha: 1.000)
     
     let context = UIGraphicsGetCurrentContext()
     
@@ -27,7 +27,7 @@ class DetailBackgroundView: UIView {
     CGContextDrawLinearGradient(context, purpleGradient,
       CGPointMake(160, 0),
       CGPointMake(160, 568),
-      UInt32(kCGGradientDrawsBeforeStartLocation) | UInt32(kCGGradientDrawsAfterEndLocation))
+      [.DrawsBeforeStartLocation, .DrawsAfterEndLocation])
     CGContextRestoreGState(context)
     
     //// Sun Path
@@ -40,7 +40,7 @@ class DetailBackgroundView: UIView {
     
     
     //// Sun Drawing
-    var sunPath = UIBezierPath(ovalInRect: CGRectMake(circleOrigin.x, circleOrigin.y, circleSize.width, circleSize.height))
+    let sunPath = UIBezierPath(ovalInRect: CGRectMake(circleOrigin.x, circleOrigin.y, circleSize.width, circleSize.height))
     pathFillColor.setFill()
     sunPath.fill()
     pathStrokeColor.setStroke()
