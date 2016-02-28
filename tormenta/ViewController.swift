@@ -17,6 +17,11 @@ class ViewController: UIViewController {
     }
   }
   
+  @IBOutlet weak var weatherIcon: UIImageView?
+  @IBOutlet weak var summaryLabel: UILabel?
+  @IBOutlet weak var sunriseTimeLabel: UILabel?
+  @IBOutlet weak var sunsetTimeLabel: UILabel?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
