@@ -22,6 +22,7 @@
 		A6315C5D1C7A484900964E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6315C5B1C7A484900964E53 /* LaunchScreen.storyboard */; };
 		A6315C671C7A4AED00964E53 /* CurrentWeather.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6315C661C7A4AED00964E53 /* CurrentWeather.plist */; };
 		A6315C691C7A4B8300964E53 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6315C681C7A4B8300964E53 /* CurrentWeather.swift */; };
+		A6FBA4C61C82FAC1001ECD52 /* DetailBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FBA4C51C82FAC1001ECD52 /* DetailBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A6315C5E1C7A484900964E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6315C661C7A4AED00964E53 /* CurrentWeather.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentWeather.plist; sourceTree = "<group>"; };
 		A6315C681C7A4B8300964E53 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		A6FBA4C51C82FAC1001ECD52 /* DetailBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				A6315C561C7A484900964E53 /* Main.storyboard */,
 				330A0CAF1C7FA26C00EE6451 /* BackgroundView.swift */,
 				334859711C80F69C000E401E /* DailyWeatherTableViewCell.swift */,
+				A6FBA4C51C82FAC1001ECD52 /* DetailBackgroundView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				33EFD0E71C80B89A00DD251E /* DailyWeather.swift in Sources */,
 				334859721C80F69C000E401E /* DailyWeatherTableViewCell.swift in Sources */,
 				330A0CB01C7FA26C00EE6451 /* BackgroundView.swift in Sources */,
+				A6FBA4C61C82FAC1001ECD52 /* DetailBackgroundView.swift in Sources */,
 				3318B62F1C7B785F0067095E /* NetworkOperation.swift in Sources */,
 				33EFD0E91C80BE8000DD251E /* Icon.swift in Sources */,
 				33EFD0EB1C80D81D00DD251E /* Forecast.swift in Sources */,
