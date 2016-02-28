@@ -27,12 +27,13 @@ class ViewController: UIViewController {
       self.title = weather.day
     }
     
-    if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
-      let navBarAttributesDictionary: [String: AnyObject]? = [
+    if let buttonFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
+      let barButtonAttributesDictionary: [String: AnyObject]? = [
         NSForegroundColorAttributeName: UIColor.whiteColor(),
-        NSFontAttributeName: navBarFont
+        NSFontAttributeName: buttonFont
       ]
-      navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+      
+      UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributesDictionary, forState: .Normal)
     }
   }
 
